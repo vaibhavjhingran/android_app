@@ -9,8 +9,11 @@ class QAScreen(BaseScreen):
 
     def image_is_displayed(self):
         img = self.driver_action().find_element_by_accessibility_id(q.house_image_access_id)
-        img.is_displayed()
+        if img.is_displayed():
+            print(f'Logged in to see "The Picture of a house".')
 
-    def assert_image_description(self):
-        img_desc = self.driver_action().find_element_by_accessibility_id(q.house_image_access_id)
-        assert "Picture of a house" in img_desc.title
+    def check_screen_readiness(self):
+        print(self.is_element_present(q.house_image_access_id))
+
+    def check_navigation_to_home_screen(self):
+        self.wait_for_visibility(15, '//android.widget.ImageView[@content-desc="Picture of a house"]')
