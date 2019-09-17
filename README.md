@@ -16,6 +16,16 @@ In this project, Pages are replaced by screens as objects.
 
 ## Running Tests
 
+Before running the tests, you may need to install `python 3.7.x` on
+your machine. The simplest way for macs is to use homebrew.
+`brew install python`
+This install `pip` the package installer along with python. Once done
+you can check the installation by typing `python --version` in the
+terminal.
+Additionally, i prefer to alias `python3 as python` which can be done
+in your `bash profile` or `.zshrc` files. All python commands mentioned
+below take advantage of that alias setting.
+
 It is important to create an emulator device in android studio.
 A sample config used in this project is: 
 `Pixel 2 XL API 23 Marshmellow`
@@ -32,11 +42,10 @@ Install package dependencies for the project
 `pip install requirements.txt`
 
 To run all tests: 
-`nose2 -v tests --html-report`
+`nose2 -v --html-report`
 
 To run an individual test: 
-`nose2 -v tests.test_app_login --html-report` ||
-`python -m tests.test_test_app_login`
+`nose2 -v tests.test_app_login --html-report`
 
 To deactivate virtualenv
 `deactivate`
