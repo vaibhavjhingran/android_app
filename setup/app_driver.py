@@ -6,4 +6,4 @@ from appium import webdriver
 class AppDriver:
 
     def __init__(self):
-        self.instace = webdriver.Remote(remote.remote_url, desired_capabilites.capabilities)
+        self.instance = webdriver.Remote(remote.remote_url, desired_capabilites.capabilities)
